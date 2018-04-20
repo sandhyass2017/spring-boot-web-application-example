@@ -56,11 +56,11 @@
     <profile>
         <id>openshift</id>
         <build>
-            <finalName>travel</finalName>
+            <finalName>spring-boot-web-application-example</finalName>
             <plugins>
                 <plugin>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>2.1.1</version>
+                     <groupId>org.springframework.boot</groupId>
+       				 <artifactId>spring-boot-maven-plugin</artifactId>
                     <configuration>
                         <outputDirectory>webapps</outputDirectory>
                         <warName>ROOT</warName>

@@ -52,4 +52,22 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+        <id>openshift</id>
+        <build>
+            <finalName>spring-boot-web-application-example</finalName>
+            <plugins>
+                <plugin>
+                     <groupId>org.springframework.boot</groupId>
+       				 <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <outputDirectory>webapps</outputDirectory>
+                        <warName>ROOT</warName>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+</profiles>
 </project>
