@@ -3,6 +3,7 @@
   <groupId>com.boraji.tutorial.springboot</groupId>
   <artifactId>spring-boot-web-application-example</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
   <properties>
     <java.version>1.8</java.version>
   </properties>
@@ -16,7 +17,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-
+<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
     <!-- JSTL tag lib -->
     <dependency>
       <groupId>javax.servlet.jsp.jstl</groupId>
@@ -47,5 +52,22 @@
       </plugin>
     </plugins>
   </build>
-  <packaging>war</packaging>
+  <profiles>
+    <profile>
+        <id>openshift</id>
+        <build>
+            <finalName>travel</finalName>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.1.1</version>
+                    <configuration>
+                        <outputDirectory>webapps</outputDirectory>
+                        <warName>ROOT</warName>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+</profiles>
 </project>
