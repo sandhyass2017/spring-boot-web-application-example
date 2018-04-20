@@ -32,20 +32,16 @@
 
     <!-- Tomcat for JSP rendering -->
     <dependency>
-      <groupId>org.apache.tomcat.embed</groupId>
-      <artifactId>tomcat-embed-jasper</artifactId>
-      <scope>provided</scope>
-      <exclusions>
-      <exclusion>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-tomcat</artifactId>
-</exclusion>
-<exclusion>
-    <groupId>org.apache.tomcat.embed</groupId>
-    <artifactId>tomcat-embed-el</artifactId>
-</exclusion>
-</exclusions>
-    </dependency>
+            <groupId>com.sdl.dxa</groupId>
+            <artifactId>dxa-web8-provider</artifactId>
+            <version>1.4.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.tomcat.embed</groupId>
+                    <artifactId>tomcat-embed-jasper</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
   </dependencies>
 
