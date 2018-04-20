@@ -31,27 +31,31 @@
     </dependency>
 
     <!-- Tomcat for JSP rendering -->
-
     <dependency>
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>tomcat-catalina</artifactId>
-        <version>8.0.21</version>
-        <scope>provided</scope>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-jasper</artifactId>
+      <scope>provided</scope>
+      <exclusions>
+      <exclusion>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-tomcat</artifactId>
+</exclusion>
+<exclusion>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-el</artifactId>
+</exclusion>
+</exclusions>
     </dependency>
 
   </dependencies>
 
   <build>
-    <finalName>getting-started-tomcat</finalName>
-      <plugins>
-          <plugin>
-              <artifactId>maven-war-plugin</artifactId>
-              <version>2.6</version>
-              <configuration>
-                  <warName>ROOT</warName>
-              </configuration>
-          </plugin>
-      </plugins>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
   </build>
   <packaging>war</packaging>
 </project>
