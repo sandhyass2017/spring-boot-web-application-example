@@ -4,7 +4,7 @@
   <artifactId>spring-boot-web-application-example</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <properties>
-    <java.version>1.8</java.version>
+    <java.version>1.7</java.version>
   </properties>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -18,12 +18,12 @@
     </dependency>
 
     <!-- JSTL tag lib -->
-    <dependency>
+    <!-- <dependency>
       <groupId>javax.servlet.jsp.jstl</groupId>
       <artifactId>javax.servlet.jsp.jstl-api</artifactId>
       <version>1.2.1</version>
     </dependency>
-
+ -->
     <dependency>
       <groupId>taglibs</groupId>
       <artifactId>standard</artifactId>
